@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
          :token_authenticatable
 
   attr_accessible :email, :password, :password_confirmation
+  
+  def ensure_authentication_token!   
+      reset_authentication_token! if authentication_token.blank?   
+  end
 end
