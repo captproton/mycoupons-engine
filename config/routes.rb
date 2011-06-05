@@ -1,4 +1,6 @@
 DeviseExample::Application.routes.draw do
+  resources :deals
+
   devise_for :users, :admin
 
   resources :home, :only => :index
