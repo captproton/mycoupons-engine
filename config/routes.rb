@@ -1,4 +1,8 @@
 DeviseExample::Application.routes.draw do
+  get "registrations/edit"
+
+  resources :token_authentications, :only => [:create, :destroy]
+
   resources :deals
 
   devise_for :users, :admin
